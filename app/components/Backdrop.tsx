@@ -4,7 +4,7 @@ type Props = {};
 
 const Backdrop = (props: Props) => {
   return (
-    <div className={"fixed flex h-full place-items-center z-[-1]"}>
+    <div className={"fixed flex h-full place-items-center z-[1]"}>
       <video
         autoPlay={true}
         loop
