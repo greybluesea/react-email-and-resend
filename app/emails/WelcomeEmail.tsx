@@ -12,13 +12,15 @@ import * as React from "react";
 
 import { Tailwind } from "@react-email/tailwind";
 
-interface NotionMagicLinkEmailProps {
-  loginCode?: string;
+interface WelcomeEmailProps {
+  nickname?: string;
 }
 
-export const NotionMagicLinkEmail = ({
-  loginCode = "sparo-ndigo-amurt-secan",
-}: NotionMagicLinkEmailProps) => (
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "";
+
+export const WelcomeEmail = ({ nickname = "" }: WelcomeEmailProps) => (
   <Html>
     <Head />
     <Preview>
@@ -27,7 +29,7 @@ export const NotionMagicLinkEmail = ({
     <Tailwind>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>Welcome</Heading>
+          <Heading style={h1}>Welcome {nickname},</Heading>
 
           <Text style={{ ...text, marginBottom: "14px" }} className="text-xl">
             This email is formulated with
@@ -37,18 +39,21 @@ export const NotionMagicLinkEmail = ({
               alt="dark logo"
             /> */}
             <Img
-              src={
-                "https://mintlify.s3-us-west-1.amazonaws.com/react-email/logo/light.svg"
-              }
+              src={`${baseUrl}/static/reactemail.svg`}
               alt="react-email logo"
               className="inline -mb-2"
             />
             , sent via{" "}
-            <svg
+            <Img
+              src={`${baseUrl}/static/resend.svg`}
+              alt="resend logo"
+              className="inline -mb-2"
+            />
+            {/* <svg
               width="60"
               viewBox="0 0 65 16"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              // xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M0.820068 15V1.00001H7.02007C7.88674 1.00001 8.6734 1.20001 9.38007 1.60001C10.0867 1.98668 10.6401 2.51334 11.0401 3.18001C11.4534 3.84668 11.6601 4.60668 11.6601 5.46001C11.6601 6.30001 11.4534 7.06668 11.0401 7.76001C10.6401 8.44001 10.0867 8.98001 9.38007 9.38001C8.6734 9.78001 7.88674 9.98001 7.02007 9.98001H3.72007V15H0.820068ZM8.76007 15L5.20007 8.68001L8.28007 8.18001L12.2401 15.02L8.76007 15ZM3.72007 7.54001H6.88007C7.24007 7.54001 7.5534 7.46001 7.82007 7.30001C8.10007 7.12668 8.3134 6.89334 8.46007 6.60001C8.60673 6.29335 8.68007 5.95335 8.68007 5.58001C8.68007 5.18001 8.5934 4.83335 8.42007 4.54001C8.24674 4.24668 7.9934 4.02001 7.66007 3.86001C7.32674 3.68668 6.94007 3.60001 6.50007 3.60001H3.72007V7.54001Z"
@@ -74,7 +79,7 @@ export const NotionMagicLinkEmail = ({
                 d="M58.8569 15.2C57.9236 15.2 57.0903 14.9667 56.3569 14.5C55.6369 14.02 55.0636 13.3733 54.6369 12.56C54.2236 11.7333 54.0169 10.78 54.0169 9.70001C54.0169 8.64668 54.2236 7.70668 54.6369 6.88001C55.0636 6.04001 55.6369 5.38668 56.3569 4.92001C57.0903 4.44001 57.9236 4.20001 58.8569 4.20001C59.3503 4.20001 59.8236 4.28001 60.2769 4.44001C60.7436 4.58668 61.1569 4.79335 61.5169 5.06001C61.8903 5.32668 62.1903 5.62668 62.4169 5.96001C62.6436 6.28001 62.7703 6.61335 62.7969 6.96001L62.0769 7.10001V0.200012H64.9369V15H62.2369L62.1169 12.56L62.6769 12.62C62.6503 12.9533 62.5303 13.2733 62.3169 13.58C62.1036 13.8867 61.8169 14.1667 61.4569 14.42C61.1103 14.66 60.7103 14.8533 60.2569 15C59.8169 15.1333 59.3503 15.2 58.8569 15.2ZM59.4969 12.84C60.0303 12.84 60.4969 12.7067 60.8969 12.44C61.2969 12.1733 61.6103 11.8067 61.8369 11.34C62.0636 10.8733 62.1769 10.3267 62.1769 9.70001C62.1769 9.08668 62.0636 8.54668 61.8369 8.08001C61.6103 7.61335 61.2969 7.24668 60.8969 6.98001C60.4969 6.71335 60.0303 6.58001 59.4969 6.58001C58.9636 6.58001 58.4969 6.71335 58.0969 6.98001C57.7103 7.24668 57.4036 7.61335 57.1769 8.08001C56.9636 8.54668 56.8569 9.08668 56.8569 9.70001C56.8569 10.3267 56.9636 10.8733 57.1769 11.34C57.4036 11.8067 57.7103 12.1733 58.0969 12.44C58.4969 12.7067 58.9636 12.84 59.4969 12.84Z"
                 fill="black"
               ></path>
-            </svg>
+            </svg> */}
           </Text>
 
           <Text style={footer} className="text-sm">
@@ -86,7 +91,7 @@ export const NotionMagicLinkEmail = ({
   </Html>
 );
 
-export default NotionMagicLinkEmail;
+export default WelcomeEmail;
 
 const main = {
   backgroundColor: "#ffffff",
@@ -125,7 +130,7 @@ const text = {
 };
 
 const footer = {
-  color: "#898989",
+  color: "violet",
   fontFamily:
     "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
   fontSize: "12px",

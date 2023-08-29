@@ -33,7 +33,13 @@ export default function RootLayout({
                 className="inline ml-2"
               />
               , sent via
-              <Image src="http://www.w3.org/2000/svg" alt="Resend logo" />
+              <Image
+                src="/resend.svg"
+                width="75"
+                height={"20"}
+                alt="Resend logo"
+                className="inline ml-2"
+              />
             </h2>
           </div>
           {children}
