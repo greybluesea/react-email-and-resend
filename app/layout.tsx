@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Backdrop from "./components/Backdrop";
 import Footer from "./components/Footer";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,23 @@ export default function RootLayout({
         <main className="flex h-screen flex-col items-center p-24 text-gray-300">
           <div className="z-10 max-w-5xl w-full flex items-center justify-center">
             <h2 className="text-2xl text-center ">
-              Enter your name and email, to receive an one-off/transactional
-              email <br /> formulated with React Email, sent via Resend
+              Enter your name and email to receive an one-off email <br />
+              formulated via
+              <Image
+                src="https://mintlify.s3-us-west-1.amazonaws.com/react-email/logo/dark.svg"
+                width="160"
+                height={"20"}
+                alt="react-email logo"
+                className="inline ml-2"
+              />
+              , sent via
+              <Image
+                src="/resend.svg"
+                width="75"
+                height={"20"}
+                alt="react-email logo"
+                className="inline ml-2"
+              />
             </h2>
           </div>
           {children}
