@@ -12,7 +12,7 @@ const SentPage = (props: Props) => {
       <div className="text-2xl mt-20">Email Sent!</div>
       <br />
       <Link href="/" className="bg-violet-600 btn">
-        return to home page
+        Return to home page
       </Link>
     </>
   );
