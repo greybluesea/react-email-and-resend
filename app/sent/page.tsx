@@ -6,6 +6,10 @@ type Props = {};
 
 const SentPage = (props: Props) => {
   revalidatePath("/");
+  // setTimeout(redirect('/'), 2500);
+  /*  setTimeout(() => {
+    redirect("/");
+  }, 2500); */
 
   return (
     <>
