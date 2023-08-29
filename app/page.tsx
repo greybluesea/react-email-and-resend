@@ -1,9 +1,9 @@
 import React from "react";
 import InputItem from "./components/InputItem";
-import { Resend } from "resend";
+
 import WelcomeEmail from "./emails/WelcomeEmail";
 import { revalidatePath } from "next/cache";
-export const resend = new Resend(process.env.RESEND_API_KEY);
+import { resend } from "./resend/resend";
 
 const HomePage = () => {
   async function sendEmail(data: FormData) {
@@ -15,8 +15,6 @@ const HomePage = () => {
       subject: "One-off email, formulated via react-email, sent via Resend",
       react: WelcomeEmail({ nickname: data.get("name") as string }),
     });
-
-    console.log(res);
 
     data.set("email", "");
     data.set("name", "");
