@@ -5,9 +5,8 @@ import Link from "next/link";
 type Props = {};
 
 const SentPage = (props: Props) => {
-  setTimeout(() => {
-    revalidatePath("/");
-  }, 1000);
+  revalidatePath("/");
+
   return (
     <>
       <div className="text-2xl mt-20">Email Sent!</div>
