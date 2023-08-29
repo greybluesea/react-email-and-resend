@@ -25,6 +25,7 @@ const InputItem: React.FC<InputProps> = ({
         {label}
       </label>
       <input
+        id={name}
         name={name}
         type={type}
         autoComplete={name}
