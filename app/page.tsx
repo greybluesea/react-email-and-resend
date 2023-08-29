@@ -16,6 +16,8 @@ const HomePage = () => {
       react: WelcomeEmail({ nickname: data.get("name") as string }),
     });
 
+    console.log(res);
+
     data.set("email", "");
     data.set("name", "");
 

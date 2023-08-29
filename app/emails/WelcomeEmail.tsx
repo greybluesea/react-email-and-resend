@@ -29,26 +29,26 @@ export const WelcomeEmail = ({ nickname = "" }: WelcomeEmailProps) => (
     <Tailwind>
       <Body style={main}>
         <Container style={container}>
-          <Heading style={h1}>Welcome {nickname},</Heading>
+          <Heading style={h1}>Welcome{nickname && " " + nickname},</Heading>
 
           <Text style={{ ...text, marginBottom: "14px" }} className="text-xl">
-            This email is formulated with
+            This email is formulated with react-email
             {/*  <Img
               className="w-auto h-7 relative hidden dark:block"
               src={`https://mintlify.s3-us-west-1.amazonaws.com/react-email/logo/dark.svg`}
               alt="dark logo"
             /> */}
-            <Img
-              src={`${baseUrl}/static/reactemail.svg`}
-              alt="react-email logo"
+            {/* <Img
+              src={`https://mintlify.s3-us-west-1.amazonaws.com/react-email/logo/light.svg`}
+              alt="react-email"
               className="inline -mb-2"
-            />
-            , sent via{" "}
-            <Img
+            /> */}
+            , sent via<span> </span>Resend
+            {/* <Img
               src={`${baseUrl}/static/resend.svg`}
-              alt="resend logo"
+              alt="Resend"
               className="inline -mb-2"
-            />
+            /> */}
             {/* <svg
               width="60"
               viewBox="0 0 65 16"
@@ -80,10 +80,16 @@ export const WelcomeEmail = ({ nickname = "" }: WelcomeEmailProps) => (
                 fill="black"
               ></path>
             </svg> */}
+            .
           </Text>
+          <Img
+            src={`https://picsum.photos/450/320`}
+            alt="picsum picture"
+            className="block"
+          />
 
           <Text style={footer} className="text-sm">
-            Enjoy Hacking.
+            Happy Hacking.
           </Text>
         </Container>
       </Body>
