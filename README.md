@@ -1,15 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project
-
 ## React-Email + Resend
 
-First, run the development server:
+Enter your name and email to receive an one-off email
+formulated via react-email, sent via Resend
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Youtube Link: [https://www.youtube.com/watch?v=BJm76gjyuw8](https://www.youtube.com/watch?v=BJm76gjyuw8)
