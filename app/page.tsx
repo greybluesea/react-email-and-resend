@@ -3,7 +3,9 @@ import InputItem from "./components/InputItem";
 
 import WelcomeEmail from "./emails/WelcomeEmail";
 import { revalidatePath } from "next/cache";
-import { resend } from "./resend/resend";
+
+import { Resend } from "resend";
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const HomePage = () => {
   async function sendEmail(data: FormData) {
