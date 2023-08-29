@@ -21,15 +21,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <main className="flex h-screen flex-col items-center p-24 text-gray-300">
           <div className="z-10 max-w-5xl w-full flex items-center justify-center">
-            <div>
-              <h2 className="text-2xl text-center ">
-                Enter your name and email, to receive an one-off/transactional
-                email
-              </h2>
-              <h2 className="text-2xl text-center  ">
-                formulated by React Email, sent via Resend
-              </h2>
-            </div>
+            <h2 className="text-2xl text-center ">
+              Enter your name and email, to receive an one-off/transactional
+              email <br /> formulated with React Email, sent via Resend
+            </h2>
           </div>
           {children}
           <Backdrop />
