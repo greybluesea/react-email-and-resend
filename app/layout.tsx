@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex h-screen flex-col items-center p-24 text-gray-300">
+        <main className="flex h-screen flex-col items-center p-12 sm:p-24 text-gray-300">
           <div className="z-10 max-w-5xl w-full flex items-center justify-center">
             <h2 className="text-2xl text-center ">
               Enter your name and email to receive an one-off email <br />
